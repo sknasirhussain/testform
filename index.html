@@ -55,7 +55,7 @@
     </form>
     <script>
         const form = document.getElementById('contactForm');
-        const scriptURL = 'https://script.google.com/macros/library/d/1o6txQFt8i_31ONWcd9TrWoCBRoI_qYkUjlfXGg4_nlOPDQY_HXfb2l7H/1'; // Replace this with your Web App URL
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwfG25lhNn3L2YxrJ42lc464qt-twd8smelRklmDMTWTbUcwxvo9qSP2NDYJo7djxW0vQ/exec'; // Replace this with your Web App URL
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -69,11 +69,10 @@
                 const response = await fetch(scriptURL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(data)
+                    body: JSON.stringify(data),
                 });
                 if (response.ok) {
                     alert('Your message has been sent!');
-                    console.log("ok");
                     form.reset();
                 } else {
                     alert('Failed to send message. Please try again.');
@@ -82,6 +81,7 @@
                 alert('Error: ' + error.message);
             }
         });
+
     </script>
 </body>
 </html>
