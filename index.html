@@ -68,7 +68,7 @@
             try {
                 const response = await fetch(scriptURL, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin : https://sknasirhussain.github.io' },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data),
                 });
                 if (response.ok) {
